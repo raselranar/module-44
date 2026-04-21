@@ -6,7 +6,6 @@ import { createTask } from "./action";
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center gap-4 font-sans">
-      <button formAction={createTask}>Task</button>
       <AddTask />
     </div>
   );

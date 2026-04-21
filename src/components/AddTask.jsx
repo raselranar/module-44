@@ -28,18 +28,20 @@ export default function AddTask() {
               <Surface variant="default">
                 <form action={createTask} className="flex flex-col gap-4">
                   <TextField className="w-full" name="name" type="text">
+                    {/* title */}
                     <Label>Task Name</Label>
                     <Input name="title" placeholder="Enter your task name" />
                   </TextField>
 
                   <TextField className="w-full" name="message">
+                    {/* description */}
                     <Label>Description</Label>
                     <Input
                       name="description"
                       placeholder="Enter your description"
                     />
                   </TextField>
-                  {/* select */}
+                  {/* status */}
                   <Select
                     name="status"
                     className="w-[256px]"
@@ -66,6 +68,35 @@ export default function AddTask() {
                       </ListBox>
                     </Select.Popover>
                   </Select>
+
+                  {/* priority */}
+                  <Select
+                    name="priority"
+                    className="w-[256px]"
+                    placeholder="Select one">
+                    <Label>Priority</Label>
+                    <Select.Trigger>
+                      <Select.Value />
+                      <Select.Indicator />
+                    </Select.Trigger>
+                    <Select.Popover>
+                      <ListBox>
+                        <ListBox.Item id="high" textValue="high">
+                          high
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                        <ListBox.Item id="medium" textValue="medium">
+                          medium
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                        <ListBox.Item id="low" textValue="low">
+                          low
+                          <ListBox.ItemIndicator />
+                        </ListBox.Item>
+                      </ListBox>
+                    </Select.Popover>
+                  </Select>
+
                   <Modal.Footer>
                     <Button slot="close" variant="secondary">
                       Cancel
